@@ -1,26 +1,26 @@
-# build-kit.ps1 — Windows-native build of claudemd-kit.zip
+# build-kit.ps1 — Windows-native build of agentsmd-kit.zip
 # Equivalent to scripts/build-kit.sh but uses PowerShell's Compress-Archive.
 
 $ErrorActionPreference = "Stop"
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $KitSrc   = Join-Path $RepoRoot "kit"
 $DistDir  = Join-Path $RepoRoot "dist"
-$OutFile  = Join-Path $DistDir "claudemd-kit.zip"
+$OutFile  = Join-Path $DistDir "agentsmd-kit.zip"
 $Staging  = Join-Path $DistDir "staging"
 
 Write-Host "-> Cleaning previous build..."
 if (Test-Path $Staging) { Remove-Item $Staging -Recurse -Force }
 if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
-New-Item -ItemType Directory -Path "$Staging\claudemd-kit" -Force | Out-Null
+New-Item -ItemType Directory -Path "$Staging\agentsmd-kit" -Force | Out-Null
 
 Write-Host "-> Staging files..."
-Copy-Item -Path "$KitSrc\*" -Destination "$Staging\claudemd-kit\" -Recurse
+Copy-Item -Path "$KitSrc\*" -Destination "$Staging\agentsmd-kit\" -Recurse
 
 # Strip Google Drive desktop.ini sync files
-Get-ChildItem -Path "$Staging\claudemd-kit" -Recurse -Filter "desktop.ini" -Force | Remove-Item -Force
+Get-ChildItem -Path "$Staging\agentsmd-kit" -Recurse -Filter "desktop.ini" -Force | Remove-Item -Force
 
 Write-Host "-> Creating zip..."
-Compress-Archive -Path "$Staging\claudemd-kit" -DestinationPath $OutFile -Force
+Compress-Archive -Path "$Staging\agentsmd-kit" -DestinationPath $OutFile -Force
 
 Write-Host "-> Cleaning staging..."
 Remove-Item $Staging -Recurse -Force
