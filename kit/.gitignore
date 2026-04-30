@@ -1,0 +1,16 @@
+# AGENTS.md Starter Kit — gitignore additions
+# (merge these into your project's existing .gitignore)
+
+# Personal local overrides — never commit these
+AGENTS.override.md
+**/AGENTS.override.md
+CLAUDE.local.md
+
+# Auto-memory and skill caches
+.claude/cache/
+.claude/skills/.system/
+.codex/log/
+~/.codex/log/
+
+# Session logs (if you opt into them)
+session-*.jsonl

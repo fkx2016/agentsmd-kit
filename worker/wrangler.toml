@@ -1,0 +1,21 @@
+name = "agentsmd-kit-subscribe"
+main = "src/index.js"
+compatibility_date = "2026-04-01"
+workers_dev = true
+
+[vars]
+RESEND_AUDIENCE_ID = "670bbd73-c49e-43fa-86a0-68f5e8b2427c"
+FROM_EMAIL         = "kurka@kurkalabs.dev"
+FROM_NAME          = "Frank @ Kurka Labs"
+DOWNLOAD_URL       = "https://pub-204b94343bc14a6aac82bfe598168db7.r2.dev/agentsmd-kit.zip"
+ARTICLE_URL        = "https://fkxx.substack.com/p/the-standards-war-3000-people-are-upvoting"
+ALLOWED_ORIGIN     = "https://agentsmd.kurkalabs.dev"
+
+# Secrets (set via CLI):
+#   npx wrangler secret put RESEND_API_KEY
+#   npx wrangler secret put TURNSTILE_SECRET_KEY
+
+# Worker route - intercept /api/* on the custom domain
+[[routes]]
+pattern   = "agentsmd.kurkalabs.dev/api/*"
+zone_name = "kurkalabs.dev"

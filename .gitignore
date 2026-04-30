@@ -1,0 +1,46 @@
+# Build artifacts
+dist/
+*.zip
+
+# Wrangler
+.wrangler/
+.dev.vars
+worker/wrangler.toml.local
+
+# Node
+node_modules/
+*.log
+.npm
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Personal CLAUDE notes
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Secrets
+*.env
+.env.*
+!.env.example
+*credentials*
+*.pem
+*.key
+
+# Logs
+logs/
+
+# Temp files (commit message scratchpads, etc.)
+*.tmp
+.msg*.tmp
+.commit_msg.tmp
+# Google Drive metadata
+*.bak.*

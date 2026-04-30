@@ -1,0 +1,47 @@
+# AGENTS.override.md (Personal Local Override)
+
+<!--
+HOW TO USE THIS FILE
+====================
+
+1. Copy this file to AGENTS.override.md (drop the .example suffix)
+2. Edit it with your personal local preferences
+3. It is gitignored by default — your overrides stay on your machine
+4. Codex reads it natively at any directory level
+5. Claude Code does not read it natively; if you want Claude Code to
+   pick it up, add `@AGENTS.override.md` to your local CLAUDE.md
+   (but NOT to the committed CLAUDE.md, since that would defeat the point)
+
+WHEN TO USE OVERRIDES
+=====================
+
+- You prefer a different code style than the team's default (in your own working copy)
+- You're temporarily debugging and want different test commands
+- You want to disable certain rules during a refactor
+- You're using a different shell, OS, or toolchain than the team default
+
+DO NOT use this file for project-wide rules. Those go in AGENTS.md.
+-->
+
+## Personal Preferences
+
+- I use [your shell, e.g., fish] instead of bash. Translate shell snippets accordingly.
+- When committing, I prefer [your style, e.g., conventional commits with emoji prefixes].
+- I'm currently focused on [the area you're working in this week]. Bias toward changes there.
+
+## Temporary Debugging
+
+<!-- Uncomment and modify when debugging -->
+<!--
+- The CI is broken for issue #[number]. Skip the [test command] step until merged.
+- I'm running a local fork of [dependency] from [path]. Don't try to update it.
+-->
+
+## Tooling
+
+- My local DB runs on port [port] (different from team default).
+- I have [tool] installed at [non-standard path]. Use that path explicitly.
+
+## Last Updated
+
+[YYYY-MM-DD]
